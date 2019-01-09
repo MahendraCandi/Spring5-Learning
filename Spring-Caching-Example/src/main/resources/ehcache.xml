@@ -1,0 +1,21 @@
+<eh:config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns:eh='http://www.ehcache.org/v3'
+        xmlns:jsr107='http://www.ehcache.org/v3/jsr107'
+        xsi:schemaLocation="
+        http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.3.xsd
+        http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.3.xsd">
+
+    <eh:service>
+        <jsr107:defaults enable-management="false" enable-statistics="true"/>
+    </eh:service>
+
+    <eh:cache alias="products">
+        <eh:key-type>java.lang.String</eh:key-type>
+        <eh:value-type>com.mahendracandi.springcachingexample.model.Product</eh:value-type>
+        <eh:resources>
+            <eh:heap unit="entries">5</eh:heap>
+        </eh:resources>
+    </eh:cache>
+</eh:config>
+

@@ -1,0 +1,6 @@
+com\mahendracandi\springAnnotaionsAutowired\config\AppConfig.class
+com\mahendracandi\springAnnotaionsAutowired\App.class
+com\mahendracandi\springAnnotaionsAutowired\domain\License.class
+com\mahendracandi\springAnnotaionsAutowired\domain\ApplicationUsers.class
+com\mahendracandi\springAnnotaionsAutowired\domain\Application.class
+com\mahendracandi\springAnnotaionsAutowired\domain\Driver.class

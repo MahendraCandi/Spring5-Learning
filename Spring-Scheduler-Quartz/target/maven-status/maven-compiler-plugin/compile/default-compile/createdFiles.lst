@@ -1,0 +1,4 @@
+com\mahendracandi\springschedulerquartz\App.class
+com\mahendracandi\springschedulerquartz\scheduling\MyBean.class
+com\mahendracandi\springschedulerquartz\quartz\ScheduleJob.class
+com\mahendracandi\springschedulerquartz\scheduling\AnotherBean.class

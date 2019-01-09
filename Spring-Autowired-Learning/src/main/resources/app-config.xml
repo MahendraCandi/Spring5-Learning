@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+     
+    <!-- autowiring byName adalah melakukan dependency injection secara otomatis berdasarkan nama property -->
+    <!-- dalam case ini adalah pada kelas Application, mempunyai property dengan nama applicationUser
+    sehingga pada bean application dibawah, ketika di autowire=byName dia akan mencari dan mereferensikan bean 
+    dengan nama yang sama dengan property pada kelas Application tersebut, ialah applicationUser --> 
+    <bean id="application" class="com.mahendracandi.springAutoWired.domain.Application" autowire="byName"/>
+    <bean id="applicationUser" class="com.mahendracandi.springAutoWired.domain.ApplicationUser">
+    	<property name="name" value="Ini Value hasil inject"/>
+    </bean>
+    
+    <!-- autowiring byType adalah melakukan dependency injection secara otomatis melihat pada tipe data -->
+    <!-- bean employeeAddress akan mencari tipe data dengan nama EmployeeAddress pada kelas Employee -->
+    <bean id="employee" class="com.mahendracandi.springAutoWired.domain.Employee" autowire="byType"/>
+    <bean id="employeeAddress" class="com.mahendracandi.springAutoWired.domain.EmployeeAddress">
+    	<property name="street" value="jalan winonk"/>
+    	<property name="city" value="Ciledug"/>
+    </bean>
+
+    <!--autowiring by constructor cari constructor dengan argument instrument berhubung disini ada bean dengan nama instrument-->
+    <bean id="performer" class="com.mahendracandi.springAutoWired.domain.Performer" autowire="constructor"/>
+    <bean id="instrument" class="com.mahendracandi.springAutoWired.domain.Instrument">
+        <property name="name" value="Ini value nya"/>
+    </bean>
+
+    <!--autowiring no, jika menggunakan ini maka autowiring tidak akan berlaku dan harus di DI secara manual-->
+    <bean id="driver" class="com.mahendracandi.springAutoWired.domain.Driver" autowire="no">
+        <property name="license" ref="license"/>
+    </bean>
+    <bean id="license" class="com.mahendracandi.springAutoWired.domain.License">
+        <property name="numbers" value="ABCD12345"/>
+    </bean>
+</beans>

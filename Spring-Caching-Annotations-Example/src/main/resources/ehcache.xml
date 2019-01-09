@@ -1,0 +1,34 @@
+<!--
+    Come here to see EhCache XSD sintax
+    https://www.ehcache.org/documentation/3.6/xsds.html
+
+    Come here to see EhCache XML configuration
+    https://www.ehcache.org/documentation/3.6/xml.html
+
+    Come here to see integrate EhCache with JCache
+    https://www.ehcache.org/documentation/3.6/107.html
+
+    Come here to see documentation generally
+    https://www.ehcache.org/documentation/3.6/getting-started.html
+-->
+<eh:config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns:eh='http://www.ehcache.org/v3'
+        xmlns:jsr107='http://www.ehcache.org/v3/jsr107'
+        xsi:schemaLocation="
+        http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.3.xsd
+        http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.3.xsd">
+
+    <eh:service>
+        <jsr107:defaults enable-management="false" enable-statistics="true"/>
+    </eh:service>
+
+    <eh:cache alias="products">
+        <eh:key-type>java.lang.String</eh:key-type>
+        <eh:value-type>com.mahendracandi.springcachingannotationexample.model.Product</eh:value-type>
+        <eh:resources>
+            <eh:heap unit="entries">3</eh:heap>
+            <eh:offheap unit="MB">10</eh:offheap>
+        </eh:resources>
+    </eh:cache>
+</eh:config>

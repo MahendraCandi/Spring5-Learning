@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h3>Dear ${order.customerInfo.name} dari ${order.customerInfo.address}</h3>
+        <p>
+            Terimakasih telah order produk kami dengan nomor id ${order.orderId}.<br>
+            Berikut ini adalah pesanan kamu ${order.productName}<br>
+        </p>
+        <div>
+            Regards!<br><br>
+            <b>SHOP-TESTING</b>
+        </div>
+        <br><br><br>
+        <i>Pesan ini dikirim menggunakan FreeMarker Template</i>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+com\mahendracandi\app\configuration\HelloWordConfig.class
+com\mahendracandi\app\domain\HelloWordlImpl.class
+com\mahendracandi\app\App.class
+com\mahendracandi\app\domain\HelloWorld.class

@@ -1,0 +1,12 @@
+com\mahendracandi\springjmsactivemqproducerex1\configuration\MessagingConfiguration.class
+com\mahendracandi\springjmsactivemqproducerex1\util\BasicUtil.class
+com\mahendracandi\springjmsactivemqproducerex1\service\ProductService.class
+com\mahendracandi\springjmsactivemqproducerex1\messaging\MessageSender$1.class
+com\mahendracandi\springjmsactivemqproducerex1\messaging\MessageReceiver.class
+com\mahendracandi\springjmsactivemqproducerex1\App.class
+com\mahendracandi\springjmsactivemqproducerex1\model\InventoryResponse.class
+com\mahendracandi\springjmsactivemqproducerex1\configuration\AppConfig.class
+com\mahendracandi\springjmsactivemqproducerex1\messaging\MessageSender.class
+com\mahendracandi\springjmsactivemqproducerex1\configuration\ProducerApplication.class
+com\mahendracandi\springjmsactivemqproducerex1\service\ProductServiceImpl.class
+com\mahendracandi\springjmsactivemqproducerex1\model\Product.class

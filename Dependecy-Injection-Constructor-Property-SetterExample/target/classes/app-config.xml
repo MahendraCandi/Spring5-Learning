@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+     
+    <!-- membuat spring dependency injection menggunakan constructor -->
+    <bean id="rsaEncryption" class="com.mahendracandi.domain.impl.RSAEncryption"></bean>
+    
+    <!-- membuat spring menggunakan setter dependency injection -->
+    <!-- membuat bean dengan nama activeMqMessaging pada untuk class ActiveMQMessaging -->
+    <bean id="activeMqMessaging" class="com.mahendracandi.domain.impl.ActiveMQMessaging"></bean>
+    
+    <!-- constructor args adalah bean yang akan di inject ke constructor Communication -->
+    <!-- property name adalah nama method setter (setMessaging) pada class communication -->
+	<!-- jika property name menjadi messsage maka akan error, kecuali setMessaging diubah juga menjadi setMessage -->
+    <bean id="communication" class="com.mahendracandi.Communication">
+    	<constructor-arg type="com.mahendracandi.domain.Encryption">
+    		<ref bean="rsaEncryption"/>
+    	</constructor-arg>
+    	<property name="messaging">
+    		<ref bean="activeMqMessaging"/>
+    	</property>
+    </bean> 
+</beans>
